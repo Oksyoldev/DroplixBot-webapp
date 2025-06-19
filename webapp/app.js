@@ -5,6 +5,7 @@ document.getElementById("openCase").addEventListener("click", async () => {
 
   try {
     const API_URL = "https://droplixbot.onrender.com/api/open-case";
+    const response = await fetch(API_URL);
     const data = await response.json();
     resultBox.innerText = `🔥 Вам выпало: ${data.prize}`;
   } catch (err) {
