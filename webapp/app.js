@@ -56,21 +56,36 @@ profileBtn.addEventListener("click", () => {
   profileBtn.classList.add("active");
 
   const user = window.Telegram.WebApp.initDataUnsafe?.user || {
-    first_name: "Имя",
     username: "username",
     id: "id"
   };
 
-  container.innerHTML = `
-    <div class="profile-page">
-      <img src="https://t.me/i/userpic/320/${user.id}.jpg" alt="Аватар" class="profile-avatar" />
-      <h2>${user.first_name || "Пользователь"}</h2>
-      <p class="username">@${user.username || "неизвестно"}</p>
-      <div class="mini-balance">💰 1000</div>
-      <button class="logout-btn">Выйти</button>
+container.innerHTML = `
+  <div class="profile-page scrollable">
+    <img src="https://t.me/i/userpic/320/${user.id}.jpg" alt="Аватар" class="profile-avatar" />
+    <p class="username">@${user.username || "неизвестно"}</p>
+
+    <div class="profile-actions">
+      <button class="support-btn">✉️ Поддержка</button>
+      <div class="divider"></div>
+      <button class="chat-btn">💬 Наш чат</button>
     </div>
-  `;
+
+    <h3 class="section-title">🎉 История призов</h3>
+    <ul class="history-list">
+      <li>Мишка 🧸 — 18.06.2025</li>
+      <li>Telegram Premium 🎁 — 17.06.2025</li>
+      <li>Пусто 🙁 — 16.06.2025</li>
+    </ul>
+  </div>
+`;
+
+
+  document.querySelector(".support-btn").addEventListener("click", () => {
+    window.open("https://t.me/your_support_bot", "_blank");
+  });
 });
+
 
 
 // Функция для загрузки кейсов с сервера и создания кнопок
