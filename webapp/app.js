@@ -54,12 +54,24 @@ casesBtn.addEventListener("click", () => {
 profileBtn.addEventListener("click", () => {
   clearActive();
   profileBtn.classList.add("active");
+
+  const user = window.Telegram.WebApp.initDataUnsafe?.user || {
+    first_name: "Имя",
+    username: "username",
+    id: "id"
+  };
+
   container.innerHTML = `
-    <h2>Профиль</h2>
-    <p>Имя: Никита</p>
-    <p>Email: nikita@example.com</p>
+    <div class="profile-page">
+      <img src="https://t.me/i/userpic/320/${user.id}.jpg" alt="Аватар" class="profile-avatar" />
+      <h2>${user.first_name || "Пользователь"}</h2>
+      <p class="username">@${user.username || "неизвестно"}</p>
+      <div class="mini-balance">💰 1000</div>
+      <button class="logout-btn">Выйти</button>
+    </div>
   `;
 });
+
 
 // Функция для загрузки кейсов с сервера и создания кнопок
 async function loadCases() {
