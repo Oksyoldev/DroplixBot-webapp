@@ -210,77 +210,49 @@ h1 {
 
 /* Обёртка вокруг кнопок */
 .profile-actions {
+  background: #222;
+  border-radius: 10px;
   width: 90%;
-  background-color: #1f1f1f;
-  border-radius: 12px;
-  padding: 2px 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
+  overflow: hidden;
 }
 
-.profile-actions button {
-  padding: 5px 5px; /* вместо 14px 16px, если хочешь сделать ниже */
-}
-
-/* Разделитель */
-.profile-actions .divider {
-  height: 1px;
-  background-color: #333;
-  margin: 0px;
-}
-
-/* Стили кнопок */
-/* Стили кнопок как на втором скрине */
-.support-btn,
-.chat-btn {
+.profile-btn {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  padding: 14px 16px;
   width: 100%;
   background: transparent;
-  color: white;
   border: none;
-  outline: none;
-  padding: 14px 16px;
+  color: white;
   font-size: 15px;
   font-weight: 500;
   cursor: pointer;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  transition: background 0.2s;
+  text-align: left;
 }
 
-.support-btn:last-child,
-.chat-btn:last-child {
-  border-bottom: none;
-}
-
-.support-btn:hover,
-.chat-btn:hover {
-  background-color: #2a2a2a;
-}
-
-/* Левая иконка и текст */
-.support-btn .label,
-.chat-btn .label {
-  display: flex;
-  align-items: center;
-  flex: 1;
-}
-
-.support-btn .icon,
-.chat-btn .icon {
+.profile-btn .icon {
+  display: inline-block;
+  width: 22px;
+  min-width: 22px;
+  text-align: center;
   margin-right: 12px;
   font-size: 18px;
+  line-height: 1;
 }
 
-/* Стрелка справа */
-.support-btn::after,
-.chat-btn::after {
-  content: "›";
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.6);
-  margin-left: 8px;
+.profile-btn .label {
+  display: inline-block;
+  line-height: 1.2;
 }
+
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 0 16px;
+}
+
+
 
 
 
